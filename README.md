@@ -1,6 +1,6 @@
 # svrKpax
 
-svrKpax son unos servicios creados para la interacción de diferentes aplicaci�n es.
+svrKpax son unos servicios creados para la interacción de diferentes aplicación es.
 
 Estos servicios interactúan mediante unos plugins de elgg y las aplicaciones que sean necearías
 
