@@ -28,7 +28,7 @@ Una vez descargando configuramos el pom.xml y configuramos donde deplayamos nues
 
 	mvn install
 
-Lo que realiza es descargar todas las librer�as que necesitamos para que funcione la aplicación, una vez descargadas si queremos que se visualice correctamente en eclipse ejecutamos
+Lo que realiza es descargar todas las librerías que necesitamos para que funcione la aplicación, una vez descargadas si queremos que se visualice correctamente en eclipse ejecutamos
 
 	mvn eclipse:eclipse
 
