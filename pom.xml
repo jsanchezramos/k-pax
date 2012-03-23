@@ -297,12 +297,6 @@
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>edu.uoc.campusgateway</groupId>
-			<artifactId>CampusGateway</artifactId>
-			<version>2.4.2</version>
-			<scope>provided</scope>
-		</dependency>
 
 		<!-- FIN OKI -->
 	</dependencies>
