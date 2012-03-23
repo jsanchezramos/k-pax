@@ -1,8 +1,8 @@
 # svrKpax
 
-svrKpax son unos servicios creados para la interacci—n de diferentes aplicaci—n es.
+svrKpax son unos servicios creados para la interacciÃ³n de diferentes aplicaciï¿½n es.
 
-Estos servicios interactœan mediante unos plugins de elgg y las aplicaciones que sean necear’as
+Estos servicios interactÃºan mediante unos plugins de elgg y las aplicaciones que sean necearÃ­as
 
 # Requisitos
 
@@ -18,9 +18,9 @@ java 1.6
 
 maven 3.0.3 >
 
-# Instalaci—n
+# InstalaciÃ³n
 
-La instalaci—n es muy sencilla, primero nos descargamos el proyecto
+La instalaciÃ³n es muy sencilla, primero nos descargamos el proyecto
 
     git checkout o nos lo descargamos 
     
@@ -28,7 +28,7 @@ Una vez descargando configuramos el pom.xml y configuramos donde deplayamos nues
 
 	mvn install
 
-Lo que realiza es descargar todas las librer’as que necesitamos para que funcione la aplicaci—n, una vez descargadas si queremos que se visualice correctamente en eclipse ejecutamos
+Lo que realiza es descargar todas las librerï¿½as que necesitamos para que funcione la aplicaciï¿½n, una vez descargadas si queremos que se visualice correctamente en eclipse ejecutamos
 
 	mvn eclipse:eclipse
 
@@ -38,9 +38,9 @@ Y por ultimo para crear un deploy nuevo de la app
 
 -Denc=local es el entorno donde se ejecuta, puedes crear todos los que quieras, todo esto se configura en pom.xml
 
-# Instalaci—n MYSQL
+# MYSQL
 
-En la carpeta src/main/resource/sql esta el script de creaci—n de base de datos
+En la carpeta src/main/resource/sql esta el script de creaciï¿½n de base de datos
 
 En el momento que ya la tengas creada tienes que configurarar los credencia les, en la misma carpeta hay un archivo que se llama srvKpax-ds.xml, lo configuramos con los datos de nuestro servidor.
 
@@ -50,7 +50,7 @@ Este archivo lo guardamos donde deployamos nuestra aplicacion, por ejemplo:
 
 # ICIDENCIAS
 
-Si tenŽis alguna incidencia no dudŽis enviar un correo a vuestro responsable
+Si tenÃ©is alguna incidencia no dudÃ©is enviar un correo a vuestro responsable
 
 # LICENSE
 
