@@ -28,7 +28,7 @@ Una vez descargando configuramos el pom.xml y configuramos donde deplayamos nues
 
 	mvn install
 
-Lo que realiza es descargar todas las librer�as que necesitamos para que funcione la aplicaci�n, una vez descargadas si queremos que se visualice correctamente en eclipse ejecutamos
+Lo que realiza es descargar todas las librer�as que necesitamos para que funcione la aplicación, una vez descargadas si queremos que se visualice correctamente en eclipse ejecutamos
 
 	mvn eclipse:eclipse
 
@@ -40,7 +40,7 @@ Y por ultimo para crear un deploy nuevo de la app
 
 # MYSQL
 
-En la carpeta src/main/resource/sql esta el script de creaci�n de base de datos
+En la carpeta src/main/resource/sql esta el script de creación de base de datos
 
 En el momento que ya la tengas creada tienes que configurarar los credencia les, en la misma carpeta hay un archivo que se llama srvKpax-ds.xml, lo configuramos con los datos de nuestro servidor.
 
