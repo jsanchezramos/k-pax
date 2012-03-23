@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	">
+
+	<!-- post-processors for all standard config annotations -->
+	<bean
+		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
+		<property name="packagesToScan" value="uoc.edu.svrKpax.vo" />
+	</bean>
+
+	<!-- Spring's hibernate transaction manager -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- DAOS -->
+
+	<!-- USERS -->
+	<bean id="uDao" class="uoc.edu.svrKpax.dao.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="sDao" class="uoc.edu.svrKpax.dao.SessionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- END USERS -->
+
+	<!-- GAME -->
+	<bean id="rDao" class="uoc.edu.svrKpax.dao.RealmDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="gDao" class="uoc.edu.svrKpax.dao.GameDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="lDao" class="uoc.edu.svrKpax.dao.GameLikeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="iDao" class="uoc.edu.svrKpax.dao.GameInstanceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="scDao" class="uoc.edu.svrKpax.dao.GameScoreDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- END GAME -->
+	<!-- END DAOS -->
+
+	<!-- BUSSINES -->
+
+	<!-- USERS -->
+	<bean id="uBo" class="uoc.edu.svrKpax.bussines.UserBOImp">
+		<property name="uDao" ref="uDao" />
+		<property name="rDao" ref="rDao" />
+		<property name="sDao" ref="sDao" />
+		<property name="sBo" ref="sBo" />
+	</bean>
+	<bean id="sBo" class="uoc.edu.svrKpax.bussines.SessionBOImp">
+		<property name="sDao" ref="sDao" />
+		<property name="uDao" ref="uDao" />
+	</bean>
+	<!-- ENT USERS -->
+
+	<!-- GAMES -->
+	<bean id="gBo" class="uoc.edu.svrKpax.bussines.GameBOImp">
+		<property name="sBo" ref="sBo" />
+		<property name="gDao" ref="gDao" />
+	</bean>
+
+	<bean id="lBo" class="uoc.edu.svrKpax.bussines.GameLikeBOImp">
+		<property name="sBo" ref="sBo" />
+		<property name="lDao" ref="lDao" />
+	</bean>
+
+	<bean id="iBo" class="uoc.edu.svrKpax.bussines.GameInstanceBOImp">
+		<property name="sBo" ref="sBo" />
+		<property name="iDao" ref="iDao" />
+		<property name="gDao" ref="gDao" />
+		<property name="uDao" ref="uDao" />
+		<property name="scDao" ref="scDao" />
+	</bean>
+
+	<bean id="scBo" class="uoc.edu.svrKpax.bussines.GameScoreBOImp">
+		<property name="sBo" ref="sBo" />
+		<property name="gBo" ref="gBo" />
+		<property name="scDao" ref="scDao" />
+		<property name="uDao" ref="uDao" />
+	</bean>
+	<!-- END GAME -->
+	<!-- END BUSSINES -->
+
+	<bean id="oUser" class="uoc.edu.svrKpax.util.Oauth">
+		<property name="uDao" ref="uDao" />
+		<property name="gDao" ref="gDao" />
+		<property name="sDao" ref="sDao" />
+	</bean>
+
+</beans>
