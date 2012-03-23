@@ -60,7 +60,7 @@ public class GameBOImp implements GameBO {
 		Game objGame = null;
 
 		try {
-			if (Security.IsIdGame(idGame))
+			if (Security.isIdGame(idGame))
 				objGame = gDao.getGameUid(idGame);
 			else{
 				if(sBo.validateSession(campusSession)!=null){

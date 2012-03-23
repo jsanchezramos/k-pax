@@ -58,7 +58,6 @@ public class GameScoreBOImp<E> implements GameScoreBO {
 				}
 				objScore.setPoints(Integer.parseInt(point));
 				scDao.addScoreGame(objScore);
-
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

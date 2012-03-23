@@ -204,30 +204,40 @@ public class UserBOImp implements UserBO {
 			return 0;
 	}
 
+	/* (non-Javadoc)
+	 * @see uoc.edu.svrKpax.bussines.UserBO#initUserELGG(java.lang.String, java.lang.String)
+	 * Login user to elgg plataform
+	 */
 	@Override
 	public Response initUserELGG(String username, String password) {
 				
 		String URI = ConstantsKPAX.URL_ELGG+"services/api/rest/xml/?method=user.auth&api_key="+ConstantsKPAX.ELGG_API_KEY+"&username="
 				+ username + "&password=" + password;
 		Client client = Client.create();
-		//System.out.println(URI);
+		System.out.println("URL PETICION USER : "+URI);
 		WebResource holaResource = client.resource(URI);
 		ClientResponse result = holaResource.accept(MediaType.APPLICATION_XML)
 				.get(ClientResponse.class);
 		String entity = result.getEntity(String.class);
 		if (entity.indexOf("OK") != -1) {
+			System.out.println("entra");
 			return this.initUser(username, "ELGG");
 		} else {
 			throw new WebApplicationException(Response.Status.UNAUTHORIZED);
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see uoc.edu.svrKpax.bussines.UserBO#initSignELGG(java.lang.String, java.lang.String)
+	 * Sign plugin kpax Plataform elgg
+	 */
 	@Override
 	public Response initSignELGG(String username,String apikey) {
 
 		String URI = ConstantsKPAX.URL_ELGG+"services/api/rest/xml/?method=auth.sign&api_key="+apikey+"&username="+ username ;
 		Client client = Client.create();
 		WebResource holaResource = client.resource(URI);
+		System.out.println("URL PETICION USER SIGN : "+URI);
 		ClientResponse result = holaResource.accept(MediaType.APPLICATION_XML)
 				.get(ClientResponse.class);
 		String entity = result.getEntity(String.class);
