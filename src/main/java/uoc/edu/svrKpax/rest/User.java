@@ -24,8 +24,7 @@ import com.sun.jersey.spi.inject.Inject;
 /**
  * @author juanfrasr
  * 
- *         User class validate other platforms. /user/validate/uoc <-- Validate
- *         user from campus uoc.
+ *         User class validate other platforms
  * 
  */
 @SuppressWarnings("deprecation")
@@ -40,18 +39,13 @@ public class User {
 
 	@Context HttpContext hc;
 	
+	
 	/**
-	 * Validate User and correct user return campus session to manage other
-	 * petition.
-	 * 
+	 * Function work only servers uoc
 	 * @param username
 	 * @param password
-	 * @param alias
-	 * @return session services
-	 * @throws Throwable
+	 * @return session
 	 */
-	
-	
 	@POST
 	@Path("/auth/uoc")
 	public Response validateUser(@FormParam("username") String username,
@@ -59,15 +53,27 @@ public class User {
 		return uBo.initUserUOC(username, password, ConstantsKPAX.UOC);
 	}
 
+	/**
+	 * @param username
+	 * @param password
+	 * @return
+	 * @throws Exception
+	 */
 	@POST
 	@Produces(MediaType.TEXT_HTML)
 	@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
 			MediaType.APPLICATION_FORM_URLENCODED })
 	@Path("/auth/elgg")
-	public Response validateUserElgg(@FormParam("username") String username,@FormParam("password") String password) {		
+	public Response validateUserElgg(@FormParam("username") String username,@FormParam("password") String password) throws Exception {		
 		return uBo.initUserELGG(username,password);
 	}
 	
+	/**
+	 * Validate User from elgg plataform
+	 * @param username
+	 * @param apikey <-- apikey generate to elgg plataform
+	 * @return
+	 */
 	@POST
 	@Produces(MediaType.TEXT_HTML)
 	@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,

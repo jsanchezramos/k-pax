@@ -16,6 +16,7 @@ import uoc.edu.svrKpax.bussines.GameBO;
 import uoc.edu.svrKpax.bussines.GameInstanceBO;
 import uoc.edu.svrKpax.bussines.GameLikeBO;
 import uoc.edu.svrKpax.bussines.GameScoreBO;
+import uoc.edu.svrKpax.util.AES;
 import uoc.edu.svrKpax.vo.Game;
 import uoc.edu.svrKpax.vo.GameLike;
 import uoc.edu.svrKpax.vo.Score;
@@ -118,9 +119,9 @@ public class Games {
 	
 	@POST
 	@Path("/instance/end/score")
-	public Response endGameScore(@FormParam("secretSession") String campusSession,@FormParam("secretGame") String uidGame,@FormParam("points") String points){
+	public Response endGameScore(@FormParam("secretSession") String campusSession,@FormParam("secretGame") String uidGame,@FormParam("points") String points) throws Exception{
 		if(iBo.entGameInstance(campusSession, uidGame).getStatus() == 200){
-			return scBo.addScoreGame(campusSession, uidGame,points);
+			return scBo.addScoreGame(campusSession, uidGame,AES.descrypt(points));
 		}else
 			return Response.status(404).entity("Error end instance").build();
 	}

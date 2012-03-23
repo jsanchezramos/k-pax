@@ -13,7 +13,7 @@ public class Security {
 		return getCrypt(containt);
 	}
 
-	static public Boolean IsIdGame(String containt) {
+	static public Boolean isIdGame(String containt) {
 		return containt.startsWith("GAME.");
 	}
 
