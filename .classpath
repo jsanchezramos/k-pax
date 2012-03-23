@@ -14,7 +14,6 @@
   <classpathentry kind="var" path="M2_REPO/org/apache/axis/axis/1.4/axis-1.4.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/campusproject/CampusComponentsJava/1.4.3-SNAPSHOT/CampusComponentsJava-1.4.3-SNAPSHOT-config-uoc.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/campusproject/CampusComponentsJava/1.4.3-SNAPSHOT/CampusComponentsJava-1.4.3-SNAPSHOT.jar"/>
-  <classpathentry kind="var" path="M2_REPO/edu/uoc/campusgateway/CampusGateway/2.4.2/CampusGateway-2.4.2.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/campusproject/CampusLauncherJava/1.1.2/CampusLauncherJava-1.1.2-filter.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-collections/commons-collections/3.1/commons-collections-3.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-discovery/commons-discovery/0.2/commons-discovery-0.2.jar"/>
