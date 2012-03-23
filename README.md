@@ -1,8 +1,8 @@
 # svrKpax
 
-svrKpax son unos servicios creados para la interacci梟 de diferentes aplicaci梟 es.
+svrKpax son unos servicios creados para la interacci贸n de diferentes aplicaci贸n es.
 
-Estos servicios interact渁n mediante unos plugins de elgg y las aplicaciones que sean necear抋s
+Estos servicios interact煤an mediante unos plugins de elgg y las aplicaciones que sean necear铆as
 
 # Requisitos
 
@@ -18,9 +18,9 @@ java 1.6
 
 maven 3.0.3 >
 
-# Instalaci梟
+# Instalaci贸n
 
-La instalaci梟 es muy sencilla, primero nos descargamos el proyecto
+La instalaci贸n es muy sencilla, primero nos descargamos el proyecto
 
     git checkout o nos lo descargamos 
     
@@ -28,7 +28,7 @@ Una vez descargando configuramos el pom.xml y configuramos donde deplayamos nues
 
 	mvn install
 
-Lo que realiza es descargar todas las librer抋s que necesitamos para que funcione la aplicaci梟, una vez descargadas si queremos que se visualice correctamente en eclipse ejecutamos
+Lo que realiza es descargar todas las librer铆as que necesitamos para que funcione la aplicaci贸n, una vez descargadas si queremos que se visualice correctamente en eclipse ejecutamos
 
 	mvn eclipse:eclipse
 
@@ -38,9 +38,9 @@ Y por ultimo para crear un deploy nuevo de la app
 
 -Denc=local es el entorno donde se ejecuta, puedes crear todos los que quieras, todo esto se configura en pom.xml
 
-# Instalaci梟 MYSQL
+# MYSQL
 
-En la carpeta src/main/resource/sql esta el script de creaci梟 de base de datos
+En la carpeta src/main/resource/sql esta el script de creaci贸n de base de datos
 
 En el momento que ya la tengas creada tienes que configurarar los credencia les, en la misma carpeta hay un archivo que se llama srvKpax-ds.xml, lo configuramos con los datos de nuestro servidor.
 
@@ -50,7 +50,7 @@ Este archivo lo guardamos donde deployamos nuestra aplicacion, por ejemplo:
 
 # ICIDENCIAS
 
-Si ten巌s alguna incidencia no dud巌s enviar un correo a vuestro responsable
+Si ten茅is alguna incidencia no dud茅is enviar un correo a vuestro responsable
 
 # LICENSE
 
