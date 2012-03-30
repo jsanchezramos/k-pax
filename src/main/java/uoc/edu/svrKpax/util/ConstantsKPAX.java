@@ -5,7 +5,7 @@ public class ConstantsKPAX {
 
 	public final static String UOC = "UOC";
 	public final static String URL_ELGG = "http://kpax.uoc.es/elgg/";  // URL TO ELGG 
-	// public final static String URL_ELGG = "http://localhost/elggNew/";
+	//public final static String URL_ELGG = "http://localhost/elggNew/";
 	public final static String ELGG_API_KEY ="4fdd1b17d3fc9112e5143467cbcb78fd888e6ff8";  // elgg api key generate to ellg plataform API Admin plugin
 	//public final static String ELGG_API_KEY = "870148ed6b226ba4c59816dfabd480726be9a572";
 	public static final String RSA_CERTIFICATE = "-----BEGIN CERTIFICATE-----\n"   // Example RSA_CERTIFICATE
@@ -19,6 +19,6 @@ public class ConstantsKPAX {
 			+ "4TvuXJbNQc8f4AMWL/tO9w0Fk80rWKp9ea8/df4qMq5qlFWlx6yOLQxumNOmECKb\n"
 			+ "WpkUQDIDJEoFUzKMVuJf4KO/FJ345+BNLGgbJ6WujreoM1X/gYfdnJ/J\n"
 			+ "-----END CERTIFICATE-----";
-
+	
 	public static final String PATH_VALID = "user/auth/elgg";
 }

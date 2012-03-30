@@ -48,7 +48,7 @@ Este archivo lo guardamos donde deployamos nuestra aplicacion, por ejemplo:
 
 	/home/server/jboss/server/default/deploy/*
 
-# ICIDENCIAS
+# INCIDENCIAS
 
 Si tenéis alguna incidencia no dudéis enviar un correo a vuestro responsable
 

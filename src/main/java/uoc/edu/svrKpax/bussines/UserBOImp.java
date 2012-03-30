@@ -1,6 +1,5 @@
 package uoc.edu.svrKpax.bussines;
 
-import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -8,10 +7,6 @@ import java.util.Set;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
-import org.campusproject.components.AuthenticationAdminComponent;
-import org.osid.OsidContext;
-import org.osid.OsidException;
 
 import uoc.edu.svrKpax.dao.RealmDao;
 import uoc.edu.svrKpax.dao.SessionDao;
@@ -45,44 +40,8 @@ public class UserBOImp implements UserBO {
 	 */
 	@Override
 	public Response initUserUOC(String username, String password, String alias) {
-		AuthenticationAdminComponent authN;
-		String output = "";
-		int code = 200;
-
-		try {
-			OsidContext osibOject = new OsidContext();
-
-			osibOject.assignContext("username", username);
-			osibOject.assignContext("password", password);
-
-			osibOject.assignContext("authorization_key", "uocJava_kpax");
-			osibOject.assignContext("remote_ip", "127.0.0.1");
-			osibOject.assignContext("paramKeeper",
-					"username,password,authorization_key,remote_ip");
-
-			authN = new AuthenticationAdminComponent(osibOject);
-			authN.authenticateUser();
-
-			if (authN.isUserAuthenticated()) {
-				return this.initUser(username, alias);
-			} else {
-				code = 404;
-				output = "Not validar User";
-			}
-		} catch (OsidException e) {
-			code = 404;
-			output = "Errot osid oki";
-			e.printStackTrace();
-			throw new WebApplicationException(Response.Status.BAD_REQUEST);
-
-		} catch (Exception e) {
-			code = 404;
-			output = "Errot validate user";
-			e.printStackTrace();
-			throw new WebApplicationException(Response.Status.BAD_REQUEST);
-		}
-
-		return Response.status(code).entity(output).build();
+		/* must be implemented */
+		return null;
 	}
 
 	/*
@@ -96,46 +55,8 @@ public class UserBOImp implements UserBO {
 	 */
 	@Override
 	public int validateUserUOC(String campusSession) {
-		AuthenticationAdminComponent authN;
-		OsidContext osibOject = new OsidContext();
-		int userID = 0;
-		try {
-
-			osibOject.assignContext("s", campusSession);
-			osibOject.assignContext("authorization_key", "uocJava_kpax");
-			osibOject.assignContext("remote_ip", "127.0.0.1");
-			osibOject.assignContext("paramKeeper",
-					"s,authorization_key,remote_ip");
-
-			authN = new AuthenticationAdminComponent(osibOject);
-			Session objSession = sDao.getSession(campusSession);
-			String[] userId = authN.getUserId().getIdString().split("USER.");
-			userID = Integer.parseInt(userId[1]);
-
-			if (!authN.isUserAuthenticated()) {
-				if (objSession != null)
-					sDao.deleteSession(objSession);
-				throw new Exception("Session expired");
-			} else if (objSession == null) {
-
-				sDao.deleteSessionByUser(userID);
-
-				objSession = new Session(new java.sql.Timestamp(Calendar
-						.getInstance().getTime().getTime()), campusSession,
-						uDao.getUser(userID));
-				sDao.saveSessionr(objSession);
-			}
-
-		} catch (OsidException e) {
-			e.printStackTrace();
-			throw new WebApplicationException(Response.Status.UNAUTHORIZED);
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new WebApplicationException(Response.Status.UNAUTHORIZED);
-		}
-
-		return userID;
-
+		/* must be implemented */
+		return 0;
 	}
 
 	@Override
