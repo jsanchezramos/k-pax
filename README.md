@@ -40,7 +40,7 @@ Y por ultimo para crear un deploy nuevo de la app
 
 # MYSQL
 
-En la carpeta src/main/resource/sql esta el script de creación de base de datos
+En la carpeta doc/sql esta el script de creación de base de datos
 
 En el momento que ya la tengas creada tienes que configurarar los credencia les, en la misma carpeta hay un archivo que se llama srvKpax-ds.xml, lo configuramos con los datos de nuestro servidor.
 
