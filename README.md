@@ -32,7 +32,7 @@ Y por ultimo para crear una nuevo paquete desplegable nuevo de la aplicación
 
 	mvn -Denv=local clean package
 
--Denc=local es el entorno donde se ejecuta, se pueden crear todos los que se quiera, todo esto se configura en pom.xml
+-Denv=local es el entorno donde se ejecuta, se pueden crear todos los que se quiera, todo esto se configura en pom.xml
 
 # MYSQL
 
