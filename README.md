@@ -1,50 +1,46 @@
-# svrKpax
+# srvKpax
 
-svrKpax son unos servicios creados para la interacción de diferentes aplicación es.
+srvKpax son unos servicios creados para la interacción de diferentes aplicaciones.
 
-Estos servicios interactúan mediante unos plugins de elgg y las aplicaciones que sean necearías
+Estos servicios interactúan mediante unos plugins de elgg y las aplicaciones que sean necearías.
 
 # Requisitos
 
 Para un correcto funcionamiento se necesita:
 
 mysql 5
-
 jboss 4.2.3
-
 php 5
-
 java 1.6
-
 maven 3.0.3 >
 
 # Instalación
 
-La instalación es muy sencilla, primero nos descargamos el proyecto
+La instalación es muy sencilla, primero se descarga el proyecto
 
-    git checkout o nos lo descargamos 
+    git checkout o descarga por otras vías 
     
-Una vez descargando configuramos el pom.xml y configuramos donde deplayamos nuestra app. Cuando todo este configurado ejecutamos el siguiente comando
+Una vez descargado se configura el pom.xml y se configura donde se despliega la aplicación. Cuando todo este configurado se ejecuta el siguiente comando
 
 	mvn install
 
-Lo que realiza es descargar todas las librerías que necesitamos para que funcione la aplicación, una vez descargadas si queremos que se visualice correctamente en eclipse ejecutamos
+Lo que realiza es descargar todas las librerías necesarias para que funcione la aplicación, una vez descargadas  si es preciso visualizar en eclipse correctamente se ejecuta
 
 	mvn eclipse:eclipse
 
-Y por ultimo para crear un deploy nuevo de la app
+Y por ultimo para crear una nuevo paquete desplegable nuevo de la aplicación
 
 	mvn -Denv=local clean package
 
--Denc=local es el entorno donde se ejecuta, puedes crear todos los que quieras, todo esto se configura en pom.xml
+-Denc=local es el entorno donde se ejecuta, se pueden crear todos los que se quiera, todo esto se configura en pom.xml
 
 # MYSQL
 
 En la carpeta doc/sql esta el script de creación de base de datos
 
-En el momento que ya la tengas creada tienes que configurarar los credencia les, en la misma carpeta hay un archivo que se llama srvKpax-ds.xml, lo configuramos con los datos de nuestro servidor.
+Una vez creada hay que configurar los credenciales, en la misma carpeta hay un archivo que se llama srvKpax-ds.xml, debe configurarse con los datos del servidor propio.
 
-Este archivo lo guardamos donde deployamos nuestra aplicacion, por ejemplo:
+Este archivo se guarda donde se despliega la aplicacion, por ejemplo:
 
 	/home/server/jboss/server/default/deploy/*
 
